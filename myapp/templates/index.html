@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>File Upload</title>
+    </head>
+    <body>
+        {% block content %}
+        <center>
+        <p><h1>Hello, {{name.firstName}}!</h1></p>
+        <!-- <p>Is your last name {{name.lastName}}?</p> -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name = fn placeholder="First Name"/>
+            <input name = ln placeholder="Last Name"/>
+            <input type = "file" name="filedata"/><br><br>
+            <input type = "submit"/>
+            
+        </form>
+        </center>
+        {% endblock %}
+    </body>
+</html>
