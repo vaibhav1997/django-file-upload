@@ -11,4 +11,7 @@ class Name(models.Model):
 
 class File(models.Model):
     # filename = models.CharField(max_length = 200)
-    upload = models.FileField(upload_to = 'uploads/')
+    upload = models.FileField(upload_to = 'uploads/',)
+
+    def __str__(self):
+        return self.upload

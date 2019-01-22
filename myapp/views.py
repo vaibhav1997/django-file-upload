@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Name ,File
-from .forms import NameForm 
+from .forms import NameForm, FileForm
 # Create your views here.
 # def index(request):
 #     return HttpResponse("Hello World!")
@@ -17,9 +17,12 @@ def greet(request):
 def add_name(request):
     if request.method == 'POST':
         form = NameForm(request.POST)
+        form2 = FileForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Name added')
+            form2.save()
+            return HttpResponse('Added')
     else:
         form = NameForm()
-    return render(request,'index.html', {'name_form': form})
+        form2 = FileForm()
+    return render(request,'index.html', {'name_form': form, 'file_form': form2})

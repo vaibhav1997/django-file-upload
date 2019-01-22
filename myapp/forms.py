@@ -6,6 +6,7 @@ class NameForm(ModelForm):
         model = Name
         fields = ('firstName', 'lastName')
 
+class FileForm(ModelForm):    
     class Meta:
         model = File
         fields = ('upload',)     

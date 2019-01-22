@@ -6,11 +6,12 @@
     <body>
         {% block content %}
         <center>
-        <p><h1>Hello, {{name.firstName}}!</h1></p>
+        <p><h1>Hello!</h1></p>
         <!-- <p>Is your last name {{name.lastName}}?</p> -->
         <form action="{% url 'add_name' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ name_form.as_p }}
+            {{ file_form.as_p }}
             <input type = "submit" value="Save"/>
             
         </form>
