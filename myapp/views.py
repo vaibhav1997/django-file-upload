@@ -15,9 +15,11 @@ def greet(request):
     return render(request, 'index.html', {'name': total_name})
 
 def add_name(request):
+
     if request.method == 'POST':
         form = NameForm(request.POST)
         form2 = FileForm(request.POST or None, request.FILES or None)
+        # if request.method == 'POST':
         if form.is_valid():
             form.save()
             form2.save()
@@ -25,4 +27,5 @@ def add_name(request):
     else:
         form = NameForm()
         form2 = FileForm()
+        
     return render(request,'index.html', {'name_form': form, 'file_form': form2})
