@@ -5,7 +5,7 @@ from .models import Name ,File
 # def index(request):
 #     return HttpResponse("Hello World!")
 def greet(request):
-    total_name = Name.objects.all().get(id=3)
+    total_name = Name.objects.all().get(id=2)
     # last_name = Name.objects.all().get(id=1)
     # context = {
     #     'first_name': first_name,
