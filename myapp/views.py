@@ -17,7 +17,7 @@ def greet(request):
 def add_name(request):
     if request.method == 'POST':
         form = NameForm(request.POST)
-        form2 = FileForm(request.POST)
+        form2 = FileForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             form.save()
             form2.save()
