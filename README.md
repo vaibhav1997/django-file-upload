@@ -30,3 +30,6 @@ python manage.py createsuperuser
     password
 
 python manage.py runserver
+
+To start mysql server
+    >mysql -u username -p
