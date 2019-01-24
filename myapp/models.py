@@ -6,8 +6,8 @@ class Name(models.Model):
     lastName = models.CharField(max_length = 100)
 
     def __str__(self):
-        return self.firstName
-        return self.lastName
+        return self.firstName ,self.lastName
+        # return self.lastName
 
 def get_upload_path(instance, filename):
     name, ext = filename.split('.')

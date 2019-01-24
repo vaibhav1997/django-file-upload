@@ -13,6 +13,8 @@ def greet(request):
     #     'last_name': last_name,
     #     }
     return render(request, 'index.html', {'name': total_name})
+    
+    
 
 def add_name(request):
 
@@ -27,5 +29,5 @@ def add_name(request):
     else:
         form = NameForm()
         form2 = FileForm()
-        
+
     return render(request,'index.html', {'name_form': form, 'file_form': form2})
