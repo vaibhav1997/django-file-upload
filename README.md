@@ -33,3 +33,9 @@ python manage.py runserver
 
 To start mysql server
     >mysql -u username -p
+   
+
+## Read uploaded file without storing
+>file = request.FILES['filename']
+>print(file)
+>df = pd.read_excel(request.FILES['filename'].read())
